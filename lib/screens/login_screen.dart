@@ -7,16 +7,50 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
+final double topWidgetHeight = 209.0;
+final double buttonMenu = 51.0;
+
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
+        body: Stack(
       children: <Widget>[
-        Image.asset('images/foto.jpg'),
-        Row(
-          children: <Widget>[],
-        )
+        Column(
+          children: <Widget>[
+            Container(
+              child: Image.asset('images/foto.jpg'),
+            )
+          ],
+        ),
+        Positioned(
+          child: Row(
+            children: <Widget>[
+              Container(
+                width: 134.0,
+                height: 51.0,
+                child: RaisedButton(
+                  onPressed: () {},
+                  color: Color.fromARGB(255, 0, 134, 209),
+                  textColor: Colors.white,
+                  child: Text('SIGN IN'),
+                ),
+              ),
+              Container(
+                width: 134.0,
+                height: 51.0,
+                child: RaisedButton(
+                  onPressed: () {},
+                  color: Colors.white,
+                  textColor: Color.fromARGB(255, 0, 134, 209),
+                  child: Text('SIGN IN'),
+                ),
+              )
+            ],
+          ),
+          left: (MediaQuery.of(context).size.width / 2) - 134.0,
+          top: topWidgetHeight,
+        ),
       ],
     ));
   }
